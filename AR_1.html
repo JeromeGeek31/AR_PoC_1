@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.js"></script>
+<script nomodule src="https://unpkg.com/@google/model-viewer/dist/model-viewer-legacy.js"></script>
+<body style='margin : 50px'>
+<img
+  src="http://localhost:8000/qrcode_localhost.png"
+  alt="QRCODE" 
+  width="200"
+  height="150"
+  />
+<model-viewer src="http://localhost:8000/Node_2.gltf"
+  camera-controls
+  ar
+  tone-mapping="neutral"
+  poster="poster.webp" 
+  shadow-intensity="1"
+  >
+   <button slot="ar-prompt" id="ar-prompt">
+        View in your space
+    <button class="hotspot" slot="hotspot-hand" data-position="-0.54 0.93 0.1" data-normal="-0.73 0.05 0.69">
+    <div class="annotation">53-11-33</div>
+  </button>
+	
+	
+<style>
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+  model-viewer {
+    background-color: #eee;
+    overflow-x: hidden;
+  }
+  .hotspot{
+    display: block;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    border: none;
+    background-color: blue;
+    box-sizing: border-box;
+    pointer-events: none;
+  }
+
+  .hotspot[slot="hotspot-hand"]{
+    --min-hotspot-opacity: 0;
+    background-color: red;
+  }
+
+  .hotspot[slot="hotspot-foot"]:not([data-visible]) {
+    background-color: transparent;
+    border: 3px solid blue;
+  }
+
+  .annotation{
+    background-color: #888888;
+    position: absolute;
+    transform: translate(10px, 10px);
+    border-radius: 10px;
+    padding: 10px;
+  }
+  /* This keeps child nodes hidden while the element loads */
+  :not(:defined) > * {
+    display: none;
+  }
+</style>  
+  	
+</model-viewer>
+
+</body>
+</html>
