@@ -6,10 +6,10 @@
 <body style='margin : 50px'>
 
 <model-viewer src="../AR_PoC_1/data/data/reduced2.gltf"
-  camera-controls
+   camera-orbit="calc(-1.5rad + env(window-scroll-y) * 4rad) calc(0deg + env(window-scroll-y) * 180deg) calc(5m - env(window-scroll-y) * 10m)"
+  camera-control touch-actions"=pan-y"
   ar
-  tone-mapping="neutral"
-  poster="poster.webp" 
+  tone-mapping="neutral""
   shadow-intensity="1"
   >
    <button slot="ar-prompt" id="ar-prompt">
