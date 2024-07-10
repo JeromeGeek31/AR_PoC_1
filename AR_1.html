@@ -20,7 +20,6 @@
   camera-controls touch-action="pan-y" camera-target="0m 0m 0m" auto-rotate
   ar
   tone-mapping="neutral"
-  poster="poster.webp" 
   shadow-intensity="2"
   >
    <button slot="ar-prompt" id="ar-prompt">
@@ -30,9 +29,21 @@
   </button>
 <canvas tabindex="1" aria-label="View from stage upper-right" aria-live="polite" width="840" height="300" style="width: 840px; height: 300px; cursor: grab;" class="show">
     </canvas>
-	   
+   
 </div>	
+<div id="lazy-load-poster" slot="poster"></div>
 <style>
+    #lazy-load-poster {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-image: url("../../assets/poster-damagedhelmet.webp");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }	
   /* This keeps child nodes hidden while the element loads */
   :not(:defined) > * {
     display: none;
